@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Busca Animada</title>
+
+		<!-- SCRIPT PARA FUNÇÕES -->
+		<script type="text/javascript">
+
+			// Variável para armazenar texto 
+			var texto = "Faça sua busca aqui!";
+
+			function preenche() {
+				// Captura o valor que foi recuperado no ID busca
+				var valor = document.getElementById("busca").value;
+
+				if (valor == "") {
+					// Se o form estiver vazio, ele preenche com o texto
+					document.getElementById("busca").value = texto;
+				}
+			}
+
+			// Carrega o texto ao carregar a página
+			window.onload=function() {
+				preenche(); 
+			}
+
+			function limpa() {
+				// Captura o valor que foi recuperado no ID busca
+				var valor = document.getElementById("busca").value;
+
+				if (valor == texto) {
+					// Se o form estiver com o texto, ele remove-o
+					document.getElementById("busca").value = '';
+				}
+			}
+
+		</script>
+
+		<!-- ESTILO RÁPIDO -->
+		<style type="text/css">
+			input[type="text"] {
+				width: 200px;
+				padding: 6px;
+				border: thin solid #ccc;
+				color: #999;
+				font-style: italic;
+				border-radius: 2px;
+				margin-left: 10%;
+			}
+
+			input[type="text"]:focus {
+				color: #000;
+				font-style: normal;
+			}
+
+			input[type="submit"] {
+				border: thin solid #069;
+				font-weight: bold;
+				width: 80px;
+				padding: 6px;
+				color: #fff;
+				background: #069;
+				border-radius: 2px;
+			}
+
+			input[type="submit"]:hover {
+				background: #09f;
+			}
+
+			h1 {
+				margin-top: 3%;
+				margin-left: 10%;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+	<h1>Busca animada com Javascript</h1>
+
+		<form action="" method="get">
+			<input type="text" onclick="limpa();" onblur="preenche();" name="palavra" id="busca" value="">
+			<input type="submit" value="Buscar">
+		</form>
+
+
+
+	</body>
+</html>
